@@ -21,6 +21,27 @@ public class SlingShot : MonoBehaviour
 
     [SerializeField] private float bottomBandLimit;
 
+    public GameObject birdPrefab;
+
+    private GameObject _bird;
+
+    private Rigidbody2D _birdRigid;
+    private Collider2D _birdCollider;
+
+
+    void createBird()
+    {
+        _bird = Instantiate(birdPrefab);
+        _birdRigid = _bird.GetComponent<Rigidbody2D>();
+        _birdCollider = _bird.GetComponent<Collider2D>();
+        _birdCollider.enabled = false;
+
+        _birdRigid.isKinematic = true;
+
+        ResetBands();
+    }
+    
+    
     public bool isMouseDown;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +50,8 @@ public class SlingShot : MonoBehaviour
         lineRenderers[1].positionCount = 2;
         lineRenderers[0].SetPosition(0, startBands[0].position);
         lineRenderers[1].SetPosition(0, startBands[1].position);
+
+        createBird();
     }
 
     // Update is called once per frame
@@ -81,5 +104,12 @@ public class SlingShot : MonoBehaviour
     {
         lineRenderers[0].SetPosition(1, position);
         lineRenderers[1].SetPosition(1, position);
+        // _bird.transform.position = position;
+        if (_bird)
+        {
+            Vector3 dir = position - center.position;
+            _bird.transform.position = position + dir.normalized * -0.4f;
+            _bird.transform.right = -dir.normalized;
+        }
     }
 }
