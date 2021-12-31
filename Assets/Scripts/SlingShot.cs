@@ -23,20 +23,25 @@ public class SlingShot : MonoBehaviour
 
     public GameObject birdPrefab;
 
-    private GameObject _bird;
+    // private GameObject _bird;
 
     private Rigidbody2D _birdRigid;
+    
     private Collider2D _birdCollider;
+    
+    public float force;
 
 
-    void createBird()
+    void CreateBird()
     {
-        _bird = Instantiate(birdPrefab);
-        _birdRigid = _bird.GetComponent<Rigidbody2D>();
-        _birdCollider = _bird.GetComponent<Collider2D>();
+        // _bird = Instantiate(birdPrefab);
+        _birdRigid = Instantiate(birdPrefab).GetComponent<Rigidbody2D>();
+        _birdCollider = _birdRigid.GetComponent<Collider2D>();
         _birdCollider.enabled = false;
 
         _birdRigid.isKinematic = true;
+        
+        GetComponent<Collider2D>().enabled = true;
 
         ResetBands();
     }
@@ -51,7 +56,7 @@ public class SlingShot : MonoBehaviour
         lineRenderers[0].SetPosition(0, startBands[0].position);
         lineRenderers[1].SetPosition(0, startBands[1].position);
 
-        createBird();
+        CreateBird();
     }
 
     // Update is called once per frame
@@ -64,7 +69,7 @@ public class SlingShot : MonoBehaviour
             _currentPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             _dir= _currentPosition - center.position;
             
-            Debug.Log(_dir);
+            // Debug.Log(_dir);
             
 
             if (Vector3.Magnitude(_dir) > maxBandLength)
@@ -76,12 +81,33 @@ public class SlingShot : MonoBehaviour
                 
             _currentPosition.y = Mathf.Clamp(_currentPosition.y, bottomBandLimit, 1000);
             SetBands(_currentPosition);
+            
+            if (_birdCollider)
+            {
+                _birdCollider.enabled = true;
+            }
+            
         }
         else
         {
             ResetBands();
         }
         
+    }
+    
+    
+    void Shoot()
+    {
+        _birdRigid.isKinematic = false;
+        Vector3 birdForce = (_currentPosition - center.position) * force * -1;
+        _birdRigid.velocity = birdForce;
+
+        // bird.GetComponent<Bird>().Release();
+
+        _birdRigid = null;
+        _birdCollider = null;
+        GetComponent<Collider2D>().enabled = false;
+        Invoke("CreateBird", 2);
     }
 
     private void OnMouseDown()
@@ -92,6 +118,8 @@ public class SlingShot : MonoBehaviour
     private void OnMouseUp()
     {
         isMouseDown = false;
+        Shoot();
+        _currentPosition = idlePosition.position;
     }
 
     void ResetBands()
@@ -104,12 +132,12 @@ public class SlingShot : MonoBehaviour
     {
         lineRenderers[0].SetPosition(1, position);
         lineRenderers[1].SetPosition(1, position);
-        // _bird.transform.position = position;
-        if (_bird)
+
+        if (_birdRigid)
         {
             Vector3 dir = position - center.position;
-            _bird.transform.position = position + dir.normalized * -0.4f;
-            _bird.transform.right = -dir.normalized;
+            _birdRigid.transform.position = position + dir.normalized * -0.4f;
+            _birdRigid.transform.right = -dir.normalized;
         }
     }
 }

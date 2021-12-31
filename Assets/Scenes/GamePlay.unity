@@ -646,6 +646,7 @@ MonoBehaviour:
   bottomBandLimit: -5
   birdPrefab: {fileID: 8753794508271045416, guid: 34370c4c67c883c4fb0f2023454d5161,
     type: 3}
+  force: 5
   isMouseDown: 0
 --- !u!61 &1158198921
 BoxCollider2D:
