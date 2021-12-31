@@ -19,6 +19,8 @@ public class SlingShot : MonoBehaviour
 
     [SerializeField] private float maxBandLength;
 
+    [SerializeField] private float bottomBandLimit;
+
     public bool isMouseDown;
     // Start is called before the first frame update
     void Start()
@@ -39,9 +41,17 @@ public class SlingShot : MonoBehaviour
             _currentPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             _dir= _currentPosition - center.position;
             
-            if (Vector3.Magnitude(_dir)>maxBandLength)
-                _currentPosition = center.position + Vector3.Normalize(_dir) * maxBandLength;
+            Debug.Log(_dir);
+            
 
+            if (Vector3.Magnitude(_dir) > maxBandLength)
+            {
+                
+                _currentPosition = center.position + Vector3.Normalize(_dir) * maxBandLength;
+                
+            }
+                
+            _currentPosition.y = Mathf.Clamp(_currentPosition.y, bottomBandLimit, 1000);
             SetBands(_currentPosition);
         }
         else
