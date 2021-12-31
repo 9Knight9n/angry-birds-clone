@@ -322,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: -10}
+  m_LocalPosition: {x: -2.96, y: -1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -608,7 +608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158198918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.450736, y: -3.934663, z: 35.089104}
+  m_LocalPosition: {x: -4.64, y: -3.934663, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 346967815}
@@ -642,6 +642,7 @@ MonoBehaviour:
   - {fileID: 270963018}
   center: {fileID: 999720050}
   idlePosition: {fileID: 1806167116}
+  maxBandLength: 3
   isMouseDown: 0
 --- !u!61 &1158198921
 BoxCollider2D:
@@ -988,8 +989,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.005180359
+        value: 0.9942188
         inSlope: 0
         outSlope: 0
         tangentMode: 0
