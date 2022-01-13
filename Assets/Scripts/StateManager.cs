@@ -9,6 +9,7 @@ public class StateManager : MonoBehaviour
     public static StateManager Instance;
     [SerializeField] public LevelConfig config;
     public GameState gameState;
+    public GameObject currentBird;
 
     private void Awake()
     {

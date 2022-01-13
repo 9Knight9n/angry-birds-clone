@@ -17,22 +17,26 @@ public class CameraMove : MonoBehaviour
     private void Start()
     {
         maxX = StateManager.Instance.config.MapMaxX;
+        minX = StateManager.Instance.config.MapMinX;
+        maxY = StateManager.Instance.config.MapMaxY;
+        minY = StateManager.Instance.config.MapMinY;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( StateManager.Instance.gameState == GameState.ReadyToLaunch
-            // SlingShot.slingshotState == SlingshotState.Idle 
-            // && GameManager.CurrentGameState == GameState.Playing
-            )
+        if ( StateManager.Instance.gameState == GameState.ReadyToLaunch || StateManager.Instance.gameState == GameState.BirdFlying)
         {
             // drag start
             if (Input.GetMouseButtonDown(0))
             {
                 // dragSpeed = 0f;
                 previousPosition = Input.mousePosition;
+                if (StateManager.Instance.gameState == GameState.BirdFlying)
+                {
+                    StateManager.Instance.gameState = GameState.ReadyToLaunch;
+                }
             }
             //we calculate time difference in order for the following code
             //NOT to run on single taps ;)

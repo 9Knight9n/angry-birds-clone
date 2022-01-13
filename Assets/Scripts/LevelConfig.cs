@@ -6,4 +6,7 @@ using UnityEngine;
 public class LevelConfig : ScriptableObject
 {
     public float MapMaxX;
+    public float MapMinX;
+    public float MapMaxY;
+    public float MapMinY;
 }

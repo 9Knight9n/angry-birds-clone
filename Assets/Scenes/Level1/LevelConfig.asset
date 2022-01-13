@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
   MapMaxX: 30
+  MapMinX: -3
+  MapMaxY: 2
+  MapMinY: -2.4

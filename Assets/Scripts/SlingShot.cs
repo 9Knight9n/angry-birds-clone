@@ -37,14 +37,17 @@ public class SlingShot : MonoBehaviour
 
     void CreateBird()
     {
-        // _bird = Instantiate(birdPrefab);
-        _birdRigid = Instantiate(birdPrefab).GetComponent<Rigidbody2D>();
+        // Debug.Log("ran in sling");
+        GameObject bird = Instantiate(birdPrefab);
+        StateManager.Instance.currentBird = bird;
+        _birdRigid = bird.GetComponent<Rigidbody2D>();
         _birdCollider = _birdRigid.GetComponent<Collider2D>();
         _birdCollider.enabled = false;
 
         _birdRigid.isKinematic = true;
         
         GetComponent<Collider2D>().enabled = true;
+        _birdRigid.fixedAngle = true;
 
         ResetBands();
     }
@@ -54,12 +57,12 @@ public class SlingShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(StateManager.Instance.gameState);
+        // Debug.Log(StateManager.Instance.gameState);
         lineRenderers[0].positionCount = 2;
         lineRenderers[1].positionCount = 2;
         lineRenderers[0].SetPosition(0, startBands[0].position);
         lineRenderers[1].SetPosition(0, startBands[1].position);
-
+        
         CreateBird();
     }
 
@@ -110,7 +113,7 @@ public class SlingShot : MonoBehaviour
         _birdRigid = null;
         _birdCollider = null;
         GetComponent<Collider2D>().enabled = false;
-        Invoke("CreateBird", 2);
+        Invoke("CreateBird", 1);
     }
 
     private void OnMouseDown()
@@ -124,15 +127,13 @@ public class SlingShot : MonoBehaviour
     {
         if (Vector3.Magnitude(_currentPosition-idlePosition.position) > minStretchToShoot)
         {
-            StateManager.Instance.gameState = GameState.BirdFlying;
             Shoot();
+            StateManager.Instance.gameState = GameState.BirdFlying;
         }
         else
         {
             StateManager.Instance.gameState = GameState.ReadyToLaunch;
             _birdCollider.enabled = false;
-            // Destroy(_birdRigid);
-            // CreateBird();
         }
         
         isMouseDown = false;
@@ -157,4 +158,5 @@ public class SlingShot : MonoBehaviour
             _birdRigid.transform.right = -dir.normalized;
         }
     }
+    
 }

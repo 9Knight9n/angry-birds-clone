@@ -23,6 +23,12 @@ namespace Assets.Scripts
         Lose
     }
 
+    public enum Tags
+    {
+        Floor,
+        Bird,
+    }
+
 
     public enum BirdState
     {
