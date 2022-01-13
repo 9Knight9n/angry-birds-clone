@@ -16,3 +16,7 @@ MonoBehaviour:
   MapMinX: -3
   MapMaxY: 2
   MapMinY: -2.4
+  birds:
+  - {fileID: 8497547678720540618, guid: 97b51446cc61e1f429eaade909d1447e, type: 3}
+  - {fileID: 8497547678720540618, guid: 97b51446cc61e1f429eaade909d1447e, type: 3}
+  - {fileID: 8497547678720540618, guid: 97b51446cc61e1f429eaade909d1447e, type: 3}
