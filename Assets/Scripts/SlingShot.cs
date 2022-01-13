@@ -47,7 +47,6 @@ public class SlingShot : MonoBehaviour
         _birdRigid.isKinematic = true;
         
         GetComponent<Collider2D>().enabled = true;
-        _birdRigid.fixedAngle = true;
 
         ResetBands();
     }
