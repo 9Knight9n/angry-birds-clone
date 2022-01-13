@@ -16,11 +16,11 @@ namespace Assets.Scripts
 
     public enum GameState
     {
-        Start,
-        BirdMovingToSlingshot,
-        Playing,
-        Won,
-        Lost
+        ReadyToLaunch,
+        Dragging,
+        BirdFlying,
+        Win,
+        Lose
     }
 
 

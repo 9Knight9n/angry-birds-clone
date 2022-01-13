@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Assets.Scripts;
 
@@ -7,11 +8,22 @@ public class CameraMove : MonoBehaviour
     
     private float dragSpeed = 0.02f;
     private Vector3 previousPosition = Vector3.zero;
+    [SerializeField] private float maxX; // 30
+    [SerializeField] private float minX; // -3
+    [SerializeField] private float maxY; // 2 
+    [SerializeField] private float minY; // -2.4
+
+
+    private void Start()
+    {
+        maxX = StateManager.Instance.config.MapMaxX;
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if ( true
+        if ( StateManager.Instance.gameState == GameState.ReadyToLaunch
             // SlingShot.slingshotState == SlingshotState.Idle 
             // && GameManager.CurrentGameState == GameState.Playing
             )
@@ -31,8 +43,8 @@ public class CameraMove : MonoBehaviour
                 float deltaX = (previousPosition.x - input.x)  * dragSpeed;
                 float deltaY = (previousPosition.y - input.y) * dragSpeed;
                 //clamp the values so that we drag within limits
-                float newX = Mathf.Clamp(transform.position.x + deltaX, 0, 11.36336f);
-                float newY = Mathf.Clamp(transform.position.y + deltaY, 0, 2.715f);
+                float newX = Mathf.Clamp(transform.position.x + deltaX, minX, maxX);
+                float newY = Mathf.Clamp(transform.position.y + deltaY, minY, maxY);
                 //move camera
                 transform.position = new Vector3(
                     newX,

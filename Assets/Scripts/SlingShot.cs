@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+    public float minStretchToShoot;
+    
     public LineRenderer[] lineRenderers;
     
     public Transform[] startBands;
@@ -51,6 +54,7 @@ public class SlingShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(StateManager.Instance.gameState);
         lineRenderers[0].positionCount = 2;
         lineRenderers[1].positionCount = 2;
         lineRenderers[0].SetPosition(0, startBands[0].position);
@@ -102,7 +106,6 @@ public class SlingShot : MonoBehaviour
         Vector3 birdForce = (_currentPosition - center.position) * force * -1;
         _birdRigid.velocity = birdForce;
 
-        // bird.GetComponent<Bird>().Release();
 
         _birdRigid = null;
         _birdCollider = null;
@@ -112,14 +115,28 @@ public class SlingShot : MonoBehaviour
 
     private void OnMouseDown()
     {
+        StateManager.Instance.gameState = GameState.Dragging;
+        _birdCollider.enabled = true;
         isMouseDown = true;
     }
     
     private void OnMouseUp()
     {
+        if (Vector3.Magnitude(_currentPosition-idlePosition.position) > minStretchToShoot)
+        {
+            StateManager.Instance.gameState = GameState.BirdFlying;
+            Shoot();
+        }
+        else
+        {
+            StateManager.Instance.gameState = GameState.ReadyToLaunch;
+            _birdCollider.enabled = false;
+            // Destroy(_birdRigid);
+            // CreateBird();
+        }
+        
         isMouseDown = false;
-        Shoot();
-        _currentPosition = idlePosition.position;
+        ResetBands();
     }
 
     void ResetBands()
