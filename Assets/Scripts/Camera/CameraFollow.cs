@@ -41,8 +41,11 @@ public class CameraFollow : MonoBehaviour
                 // Debug.Log(BirdToFollow.position);
                 SetPos();
 
-                if (Vector3.Magnitude(_birdToFollowRigid.velocity) == 0 )
+                Debug.Log(Vector3.Magnitude(_birdToFollowRigid.velocity));
+
+                if (Vector3.Magnitude(_birdToFollowRigid.velocity) < 0.1 )
                 {
+                    // Debug.Log("ran");
                     GetNewBird();
                     StateManager.Instance.gameState = GameState.ReadyToLaunch;
                 }

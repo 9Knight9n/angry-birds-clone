@@ -25,8 +25,14 @@ PrefabInstance:
     - target: {fileID: 2385123847962911805, guid: 478d700a0451628478ed9f7c3253e643,
         type: 3}
       propertyPath: m_Name
-      value: weak
+      value: Weak
       objectReference: {fileID: 0}
+    - target: {fileID: 3353716298642230708, guid: 478d700a0451628478ed9f7c3253e643,
+        type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: f196f6f301dce9649a8046965c4dcdc5,
+        type: 2}
     - target: {fileID: 5764214520028273374, guid: 478d700a0451628478ed9f7c3253e643,
         type: 3}
       propertyPath: m_Sprite
