@@ -45,6 +45,21 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8753794508271045419, guid: 34370c4c67c883c4fb0f2023454d5161,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.36912602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753794508271045419, guid: 34370c4c67c883c4fb0f2023454d5161,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.43511418
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753794508271045419, guid: 34370c4c67c883c4fb0f2023454d5161,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.990566
+      objectReference: {fileID: 0}
     - target: {fileID: 8753794508271045420, guid: 34370c4c67c883c4fb0f2023454d5161,
         type: 3}
       propertyPath: m_LocalPosition.x
