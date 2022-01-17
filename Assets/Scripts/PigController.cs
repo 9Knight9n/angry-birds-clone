@@ -54,6 +54,7 @@ public class PigController : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<AudioManager>().Play("PigDeathSound");
         Destroy(this.gameObject);
     }
 }

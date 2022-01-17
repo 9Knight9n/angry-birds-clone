@@ -63,6 +63,7 @@ public class SlingShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("BackGroundSound");
         birdPrefabs = StateManager.Instance.config.birds;
         birdIndex = 0;
         // Debug.Log(StateManager.Instance.gameState);
@@ -107,6 +108,7 @@ public class SlingShot : MonoBehaviour
         }
         else
         {
+            
             ResetBands();
         }
         
