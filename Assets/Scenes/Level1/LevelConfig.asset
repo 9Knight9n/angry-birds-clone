@@ -17,7 +17,7 @@ MonoBehaviour:
   MapMaxY: 2
   MapMinY: -2.4
   birds:
-  - {fileID: 3104718656504950464, guid: b471929fcb000fd41812522c049ab2a2, type: 3}
+  - {fileID: 8497547678720540618, guid: 97b51446cc61e1f429eaade909d1447e, type: 3}
   - {fileID: 6064707097508590559, guid: 9043d5701dcedfc46a21589c1b4aad96, type: 3}
   - {fileID: 6703509487783336292, guid: c4766bac53eda174c8b685aa5087d1e2, type: 3}
-  - {fileID: 8497547678720540618, guid: 97b51446cc61e1f429eaade909d1447e, type: 3}
+  - {fileID: 3104718656504950464, guid: b471929fcb000fd41812522c049ab2a2, type: 3}

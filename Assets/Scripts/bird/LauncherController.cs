@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LauncherController : BirdController
 {
+    private float _magnifier;
     // Start is called before the first frame update
     void Start()
     {
