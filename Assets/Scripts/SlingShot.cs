@@ -25,6 +25,7 @@ public class SlingShot : MonoBehaviour
     [SerializeField] private float bottomBandLimit;
 
     public GameObject[] birdPrefabs;
+    public GameObject birdSoundPrefab;
 
     public int birdIndex;
 
@@ -35,14 +36,14 @@ public class SlingShot : MonoBehaviour
     private Collider2D _birdCollider;
     
     public float force;
-
-
+    
     void CreateBird()
     {
         // Debug.Log("ran in sling");
         if (birdIndex<birdPrefabs.Length)
         {
             GameObject bird = Instantiate(birdPrefabs[birdIndex]);
+            // Instantiate(birdSoundPrefab, bird.transform.position, Quaternion.identity);
             birdIndex++;
             StateManager.Instance.currentBird = bird;
             _birdRigid = bird.GetComponent<Rigidbody2D>();
@@ -78,6 +79,8 @@ public class SlingShot : MonoBehaviour
     {
         if (isMouseDown)
         {
+            
+            FindObjectOfType<AudioManager>().Play("NormalBirdSound");
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 10;
             _currentPosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -112,15 +115,17 @@ public class SlingShot : MonoBehaviour
     
     void Shoot()
     {
+        
+        // GetComponent<AudioSource>().PlayOneShot();
+        // birdController.shooting = true;
         _birdRigid.isKinematic = false;
         Vector3 birdForce = (_currentPosition - center.position) * force * -1;
         _birdRigid.velocity = birdForce;
-
-
         _birdRigid = null;
         _birdCollider = null;
         GetComponent<Collider2D>().enabled = false;
         Invoke("CreateBird", 1);
+        
     }
 
     private void OnMouseDown()

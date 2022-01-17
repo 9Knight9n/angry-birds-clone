@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8753794508271045417}
   - component: {fileID: 1665998324984712277}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: bird
   m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,3 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 0}
+  birdSound: {fileID: 9169028143821918944, guid: 556df8998fa109b4f88d7682d3200518,
+    type: 3}
