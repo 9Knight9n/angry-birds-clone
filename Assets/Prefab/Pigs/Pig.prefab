@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3353716298642230708}
   - component: {fileID: -1137738686796415987}
   - component: {fileID: -488440833450099901}
+  - component: {fileID: -155275615596005134}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Untagged
@@ -97,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 0}
+  _pigExplosionAnimPrefab: {fileID: 3012759330738328159, guid: 7f8e3ebab10c26243b895df57073a745,
+    type: 3}
+  destroyTexture: {fileID: 0}
 --- !u!50 &-1137738686796415987
 Rigidbody2D:
   serializedVersion: 4
@@ -134,3 +138,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!111 &-155275615596005134
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2385123847962911805}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

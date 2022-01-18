@@ -11,6 +11,10 @@ public class PigController : MonoBehaviour
     public PigConfig config;
 
     private float _health;
+    [SerializeField]
+    private GameObject _pigExplosionAnimPrefab;
+
+    public Texture2D destroyTexture;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +59,7 @@ public class PigController : MonoBehaviour
     private void Die()
     {
         FindObjectOfType<AudioManager>().Play("PigDeathSound");
+        Instantiate(_pigExplosionAnimPrefab, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }

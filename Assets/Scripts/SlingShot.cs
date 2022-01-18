@@ -78,10 +78,14 @@ public class SlingShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (StateManager.Instance.gameState == GameState.Dragging)
+        {
+            FindObjectOfType<AudioManager>().Play("NormalBirdSound");
+        }
         if (isMouseDown)
         {
             
-            FindObjectOfType<AudioManager>().Play("NormalBirdSound");
+            
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = 10;
             _currentPosition = Camera.main.ScreenToWorldPoint(mousePosition);
