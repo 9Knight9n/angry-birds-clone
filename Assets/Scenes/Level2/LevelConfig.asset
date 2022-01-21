@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05f2f5ad83f0784bb567caf13abb9b9, type: 3}
+  m_Name: LevelConfig
+  m_EditorClassIdentifier: 
+  MapMaxX: 30
+  MapMinX: -3
+  MapMaxY: 2
+  MapMinY: -2.4
+  birds:
+  - {fileID: 8497547678720540618, guid: 97b51446cc61e1f429eaade909d1447e, type: 3}
+  - {fileID: 6064707097508590559, guid: 9043d5701dcedfc46a21589c1b4aad96, type: 3}
+  - {fileID: 6703509487783336292, guid: c4766bac53eda174c8b685aa5087d1e2, type: 3}
+  - {fileID: 3104718656504950464, guid: b471929fcb000fd41812522c049ab2a2, type: 3}
