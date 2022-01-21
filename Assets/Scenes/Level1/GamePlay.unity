@@ -763,6 +763,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &831007617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328144, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012759330738328158, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 49b307c299a115f4196a1e90e1cdadf7, type: 2}
+    - target: {fileID: 3012759330738328159, guid: 7f8e3ebab10c26243b895df57073a745,
+        type: 3}
+      propertyPath: m_Name
+      value: PigExplosionAnim
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f8e3ebab10c26243b895df57073a745, type: 3}
 --- !u!1 &999720049
 GameObject:
   m_ObjectHideFlags: 0
