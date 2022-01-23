@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed68b78abeea91143b408f5a48a5872f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minStretchToShoot: 0.75
+  minStretchToShoot: 1
   lineRenderers:
   - {fileID: 2094047245}
   - {fileID: 1344254766}

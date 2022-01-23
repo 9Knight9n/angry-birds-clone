@@ -22,8 +22,15 @@ public class Walls : MonoBehaviour
     {
         if (other.gameObject.CompareTag(Tags.Bird.ToString()))
         {
+            // Debug.Log("current"+StateManager.Instance.currentBird);
+            // Debug.Log("walled"+other.gameObject);
+            // if (StateManager.Instance.currentBird == other.gameObject)
+            // {
+            //     Debug.Log("onsode");
+            //     StateManager.Instance.gameState = GameState.ReadyToLaunch;
+            // }
+                
             Destroy(other.gameObject);
-            StateManager.Instance.gameState = GameState.ReadyToLaunch;
         }
     }
 }

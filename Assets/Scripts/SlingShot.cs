@@ -55,6 +55,7 @@ public class SlingShot : MonoBehaviour
             GetComponent<Collider2D>().enabled = true;
 
             ResetBands();
+            
         }
     }
     
@@ -130,6 +131,8 @@ public class SlingShot : MonoBehaviour
         _birdRigid = null;
         _birdCollider = null;
         GetComponent<Collider2D>().enabled = false;
+        // CameraFollow.Instance.GetNewBird();
+        StateManager.Instance.currentBird = null;
         Invoke("CreateBird", 1);
         
     }

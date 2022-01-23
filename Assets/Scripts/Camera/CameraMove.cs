@@ -35,7 +35,7 @@ public class CameraMove : MonoBehaviour
                 previousPosition = Input.mousePosition;
                 if (StateManager.Instance.gameState == GameState.BirdFlying)
                 {
-                    StateManager.Instance.gameState = GameState.ReadyToLaunch;
+                    CameraFollow.Instance.GetNewBird(true);
                 }
             }
             //we calculate time difference in order for the following code
