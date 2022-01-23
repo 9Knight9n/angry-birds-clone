@@ -11,7 +11,7 @@ public class BirdController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        GetComponent<SpriteRenderer>().sprite = config.sprite;
+        // GetComponent<SpriteRenderer>().sprite = config.sprite;
         GetComponent<Rigidbody2D>().mass = config.mass;
         GetComponent<Transform>().localScale = new Vector3(config.scale, config.scale, config.scale);
         GetComponent<Rigidbody2D>().gravityScale = config.gravity;

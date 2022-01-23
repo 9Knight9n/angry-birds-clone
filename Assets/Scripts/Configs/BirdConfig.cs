@@ -7,7 +7,7 @@ using UnityEngine;
 public class BirdConfig : ScriptableObject
 {
     public float mass;
-    public Sprite sprite;
+    // public Sprite sprite;
     public float scale;
     public float gravity;
 }

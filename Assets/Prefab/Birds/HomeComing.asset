@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: HomeComing
   m_EditorClassIdentifier: 
   mass: 1
-  sprite: {fileID: 21300000, guid: 416aca595dcd9fb4f8e2f7dbb723c66d, type: 3}
-  scale: 0.1
+  scale: 0.3
   gravity: 1
