@@ -18,8 +18,12 @@ public class BirdController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
+        if (StateManager.Instance.gameState == GameState.BirdFlying)
+        {
+            transform.right = GetComponent<Rigidbody2D>().velocity.normalized;
+        }
         
     }
 }
