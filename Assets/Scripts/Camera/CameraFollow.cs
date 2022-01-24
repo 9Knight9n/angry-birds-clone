@@ -65,7 +65,7 @@ public class CameraFollow : MonoBehaviour
         StateManager.Instance.gameState = GameState.ReadyToLaunch;
         if (StateManager.Instance.currentBird)
         {
-            Debug.Log("inside");
+            // Debug.Log("inside");
             _birdToFollow = StateManager.Instance.currentBird;
             _birdToFollowRigid = _birdToFollow.GetComponent<Rigidbody2D>();
             if (!noSetPos)

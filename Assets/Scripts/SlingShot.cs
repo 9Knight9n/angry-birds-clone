@@ -57,10 +57,10 @@ public class SlingShot : MonoBehaviour
             ResetBands();
             
         }
-        else
-        {
-            StateManager.Instance.gameState = GameState.Lose;
-        }
+        // else
+        // {
+        //     // StateManager.Instance.gameState = GameState.Lose;
+        // }
     }
 
 
@@ -126,7 +126,7 @@ public class SlingShot : MonoBehaviour
     
     void Shoot()
     {
-        
+        StateManager.Instance.birdIndex++;
         // GetComponent<AudioSource>().PlayOneShot();
         // birdController.shooting = true;
         _birdRigid.isKinematic = false;

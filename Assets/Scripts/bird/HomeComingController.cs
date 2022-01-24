@@ -18,7 +18,7 @@ public class HomeComingController : BirdController
     protected override void Update()
     {
         base.Update();
-        Debug.Log(Input.mousePosition);
+        // Debug.Log(Input.mousePosition);
         if (Vector3.Magnitude(_rigidbody2D.velocity) > 0.2 )
         {
             if (Input.GetMouseButtonDown(1))

@@ -11,12 +11,13 @@ public class StateManager : MonoBehaviour
     public GameState gameState;
     public GameObject currentBird;
     public int remainingPigs;
+    public int birdIndex;
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         remainingPigs = config.remainedPigs;
-
+        birdIndex = 0;
     }
 
     private void Start()

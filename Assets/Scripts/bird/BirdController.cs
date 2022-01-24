@@ -27,9 +27,9 @@ public class BirdController : MonoBehaviour
             transform.right = GetComponent<Rigidbody2D>().velocity.normalized;
         }
 
-        if (StateManager.Instance.gameState == GameState.Lose)
+        if (Vector3.Magnitude(rigid.velocity) < 0.2)
         {
-            if (Vector3.Magnitude(rigid.velocity) < 0.2)
+            if (StateManager.Instance.birdIndex == StateManager.Instance.config.birds.Length)
             {
                 if (StateManager.Instance.remainingPigs > 0)
                 {
@@ -38,6 +38,5 @@ public class BirdController : MonoBehaviour
                 }
             }
         }
-        
     }
 }
