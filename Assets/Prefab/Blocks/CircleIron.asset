@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de2b7db6aa24916acb42023d881a551, type: 3}
   m_Name: CircleIron
   m_EditorClassIdentifier: 
-  mass: 2
+  mass: 1.5
   scale: 1
   gravity: 2
   color: {r: 0.078431375, g: 0.078431375, b: 0.39215687, a: 1}
