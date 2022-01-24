@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+    private GameObject currentBird;
+    private GameObject _preBird;
+    
     public float minStretchToShoot;
     
     public LineRenderer[] lineRenderers;
@@ -46,6 +49,7 @@ public class SlingShot : MonoBehaviour
             // Instantiate(birdSoundPrefab, bird.transform.position, Quaternion.identity);
             birdIndex++;
             StateManager.Instance.currentBird = bird;
+            currentBird = bird;
             _birdRigid = bird.GetComponent<Rigidbody2D>();
             _birdCollider = _birdRigid.GetComponent<Collider2D>();
             _birdCollider.enabled = false;
@@ -134,6 +138,11 @@ public class SlingShot : MonoBehaviour
         // CameraFollow.Instance.GetNewBird();
         StateManager.Instance.currentBird = null;
         FindObjectOfType<AudioManager>().Play("NormalBirdSound");
+        if (_preBird != null)
+        {
+            Destroy(_preBird);
+        }
+        _preBird = currentBird;
         Invoke("CreateBird", 1);
         
     }
