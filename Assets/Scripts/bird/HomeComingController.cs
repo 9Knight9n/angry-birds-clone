@@ -18,14 +18,16 @@ public class HomeComingController : BirdController
     protected override void Update()
     {
         base.Update();
-        if (StateManager.Instance.gameState == GameState.BirdFlying)
+        Debug.Log(Input.mousePosition);
+        if (Vector3.Magnitude(_rigidbody2D.velocity) > 0.2 )
         {
             if (Input.GetMouseButtonDown(1))
             {
                 if (!_activated)
                 {
-                    float vel = Vector3.Magnitude(_rigidbody2D.velocity);
-                    Vector3 dir = Vector3.Normalize(transform.position-Input.mousePosition);
+                    float vel = Vector3.Magnitude(_rigidbody2D.velocity) * 1.5f;
+                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector3 dir = Vector3.Normalize(worldPosition-transform.position);
                     _rigidbody2D.velocity = dir * vel;
                     _activated = true;
                 }

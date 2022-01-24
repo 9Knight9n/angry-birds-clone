@@ -21,7 +21,7 @@ public class LauncherController : BirdController
     protected override void Update()
     {
         base.Update();
-        if (StateManager.Instance.gameState == GameState.BirdFlying)
+        if (Vector3.Magnitude(_rigidbody2D.velocity) > 0.2)
         {
             if (Input.GetMouseButtonDown(1))
             {
