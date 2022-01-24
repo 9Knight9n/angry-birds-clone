@@ -45,7 +45,11 @@ public class UiManager : MonoBehaviour
 
     public void OnNextBtn()
     {
-        SceneManager.LoadScene(scene.buildIndex + 1);
+        Debug.Log(scene.name);
+        if (scene.name == "Level3")
+            OnMenuBtn();
+        else
+            SceneManager.LoadScene(scene.buildIndex + 1);
     }
     public void OnResetBtn()
     {
@@ -55,6 +59,7 @@ public class UiManager : MonoBehaviour
     }
     public void OnMenuBtn()
     {
+        Debug.Log("to menu");
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
     
