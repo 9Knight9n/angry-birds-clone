@@ -14,9 +14,9 @@ public class StatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int birdNum = StateManager.Instance.config.birds.Length;
-        index = new int[birdNum];
-        labels = new string[birdNum];
+        // int birdNum = StateManager.Instance.config.birds.Length;
+        index = new int[4];
+        labels = new string[4];
         // ui = new TextMeshProUGUI[birdNum];
         labels[0] = "Normal (UnityEngine.GameObject)";
         labels[1] = "Huge (UnityEngine.GameObject)";

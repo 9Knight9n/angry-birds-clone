@@ -27,9 +27,10 @@ public class BirdController : MonoBehaviour
             transform.right = GetComponent<Rigidbody2D>().velocity.normalized;
         }
 
-
-        if (Vector3.Magnitude(rigid.velocity) < 0.2)
+        
+        if (Vector3.Magnitude(rigid.velocity) < 0.00001)
         {
+            // Debug.Log(("inside if speed : "));
             // if (StateManager.Instance.birdIndex == StateManager.Instance.config.birds.Length)
             // {
             //     StateManager.Instance.gameState = GameState.Lose;
@@ -38,7 +39,7 @@ public class BirdController : MonoBehaviour
             {
                 if (StateManager.Instance.remainingPigs > 0)
                 {
-                    Debug.Log("Game over is called");
+                    // Debug.Log(("Speeeeeeed before game over : " + rigid.velocity));
                     EventSystemCustom.current.onEndGame.Invoke("GAME OVER!");
                 }
             }

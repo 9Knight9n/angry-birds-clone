@@ -55,7 +55,7 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-            GetNewBird();
+            GetNewBird(true);
         }
     }
     

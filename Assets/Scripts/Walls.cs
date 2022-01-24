@@ -30,6 +30,7 @@ public class Walls : MonoBehaviour
             Destroy(other.gameObject);
             if (StateManager.Instance.remainingPigs > 0 && StateManager.Instance.lastBird)
             {
+                
                 EventSystemCustom.current.onEndGame.Invoke("GAME OVER!");
             }
         }
