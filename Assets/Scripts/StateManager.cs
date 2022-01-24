@@ -10,17 +10,23 @@ public class StateManager : MonoBehaviour
     [SerializeField] public LevelConfig config;
     public GameState gameState;
     public GameObject currentBird;
-
+    public int remainingPigs;
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-        
-        
+        remainingPigs = config.remainedPigs;
+
     }
 
     private void Start()
     {
+        Time.timeScale = 1;
         gameState = GameState.ReadyToLaunch;
+    }
+
+    private void Update()
+    {
+        
     }
 }

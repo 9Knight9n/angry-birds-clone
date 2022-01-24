@@ -60,6 +60,11 @@ public class PigController : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("PigDeathSound");
         Instantiate(_pigExplosionAnimPrefab, transform.position, Quaternion.identity);
+        StateManager.Instance.remainingPigs--;
+        if (StateManager.Instance.remainingPigs == 0)
+        {
+            EventSystemCustom.current.onEndGame.Invoke("YOU WIN");
+        }
         Destroy(this.gameObject);
     }
 }

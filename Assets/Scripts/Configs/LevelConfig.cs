@@ -9,6 +9,7 @@ public class LevelConfig : ScriptableObject
     public float MapMinX;
     public float MapMaxY;
     public float MapMinY;
+    public int remainedPigs;
 
     public GameObject[] birds;
 }

@@ -57,9 +57,13 @@ public class SlingShot : MonoBehaviour
             ResetBands();
             
         }
+        else
+        {
+            StateManager.Instance.gameState = GameState.Lose;
+        }
     }
-    
-    
+
+
     public bool isMouseDown;
     // Start is called before the first frame update
     void Start()
