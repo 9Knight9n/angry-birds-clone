@@ -12,6 +12,7 @@ public class StateManager : MonoBehaviour
     public GameObject currentBird;
     public int remainingPigs;
     public int birdIndex;
+    public bool lastBird;
     private void Awake()
     {
         if (Instance == null) Instance = this;

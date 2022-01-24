@@ -57,10 +57,10 @@ public class SlingShot : MonoBehaviour
             ResetBands();
             
         }
-        // else
-        // {
-        //     // StateManager.Instance.gameState = GameState.Lose;
-        // }
+        else
+        {
+            StateManager.Instance.lastBird = true;
+        }
     }
 
 
@@ -83,10 +83,6 @@ public class SlingShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StateManager.Instance.gameState == GameState.Dragging)
-        {
-            FindObjectOfType<AudioManager>().Play("NormalBirdSound");
-        }
         if (isMouseDown)
         {
             
@@ -137,6 +133,7 @@ public class SlingShot : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         // CameraFollow.Instance.GetNewBird();
         StateManager.Instance.currentBird = null;
+        FindObjectOfType<AudioManager>().Play("NormalBirdSound");
         Invoke("CreateBird", 1);
         
     }

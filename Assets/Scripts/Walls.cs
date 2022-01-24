@@ -22,16 +22,13 @@ public class Walls : MonoBehaviour
     {
         if (other.gameObject.CompareTag(Tags.Bird.ToString()))
         {
-            // Debug.Log("current"+StateManager.Instance.currentBird);
-            // Debug.Log("walled"+other.gameObject);
-            // if (StateManager.Instance.currentBird == other.gameObject)
+            // if (StateManager.Instance.birdIndex == StateManager.Instance.config.birds.Length+1)
             // {
-            //     Debug.Log("onsode");
-            //     StateManager.Instance.gameState = GameState.ReadyToLaunch;
+            //     StateManager.Instance.gameState = GameState.Lose;
             // }
                 
             Destroy(other.gameObject);
-            if (StateManager.Instance.remainingPigs > 0 && StateManager.Instance.birdIndex == StateManager.Instance.config.birds.Length)
+            if (StateManager.Instance.remainingPigs > 0 && StateManager.Instance.lastBird)
             {
                 EventSystemCustom.current.onEndGame.Invoke("GAME OVER!");
             }
