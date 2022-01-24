@@ -28,8 +28,9 @@ public class BirdController : MonoBehaviour
         }
 
         
-        if (Vector3.Magnitude(rigid.velocity) < 0.00001)
+        if (Vector3.Magnitude(rigid.velocity) < 0.2)
         {
+            
             // Debug.Log(("inside if speed : "));
             // if (StateManager.Instance.birdIndex == StateManager.Instance.config.birds.Length)
             // {
@@ -43,6 +44,7 @@ public class BirdController : MonoBehaviour
                     EventSystemCustom.current.onEndGame.Invoke("GAME OVER!");
                 }
             }
+
         }
         
     }

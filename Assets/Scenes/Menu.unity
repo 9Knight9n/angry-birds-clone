@@ -350,7 +350,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 81508178}
-        m_MethodName: LoadLevel2
+        m_MethodName: LoadLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -554,7 +554,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 81508178}
-        m_MethodName: LoadLevel3
+        m_MethodName: LoadLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1292,6 +1292,8 @@ MonoBehaviour:
   gameState: 0
   currentBird: {fileID: 0}
   remainingPigs: 0
+  birdIndex: 0
+  lastBird: 0
 --- !u!1 &1875878642
 GameObject:
   m_ObjectHideFlags: 0

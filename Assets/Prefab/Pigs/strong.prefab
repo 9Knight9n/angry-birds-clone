@@ -16,17 +16,22 @@ PrefabInstance:
     - target: {fileID: 876277665284729817, guid: c10b03e206cd7d34aa421d4b89242a1b,
         type: 3}
       propertyPath: m_Name
-      value: Strong
+      value: strong
       objectReference: {fileID: 0}
     - target: {fileID: 6055148807290287271, guid: c10b03e206cd7d34aa421d4b89242a1b,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -0.01205024
       objectReference: {fileID: 0}
     - target: {fileID: 6055148807290287271, guid: c10b03e206cd7d34aa421d4b89242a1b,
         type: 3}
       propertyPath: m_Radius
-      value: 0.460945
+      value: 0.4443759
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055148807290287271, guid: c10b03e206cd7d34aa421d4b89242a1b,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0081662135
       objectReference: {fileID: 0}
     - target: {fileID: 6702887682059826153, guid: c10b03e206cd7d34aa421d4b89242a1b,
         type: 3}
@@ -53,6 +58,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7119657699409450298, guid: c10b03e206cd7d34aa421d4b89242a1b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8497171208788557109, guid: c10b03e206cd7d34aa421d4b89242a1b,
         type: 3}
